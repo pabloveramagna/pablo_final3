@@ -17,17 +17,19 @@
 
   <tbody>
     <% @listatareas.each do |listatarea| %>
-      <tr>
-        <td><%= listatarea.nombre %></td>
-        <td><%= listatarea.desde %></td>
-        <td><%= listatarea.hasta %></td>
-        <td><%= listatarea.responsable %></td>
-        <td><%= listatarea.realizado %></td>
-        <td><%= listatarea.observacion %></td>
-        <td><%= link_to 'Show', listatarea %></td>
-        <td><%= link_to 'Edit', edit_listatarea_path(listatarea) %></td>
-        <td><%= link_to 'Destroy', listatarea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if listatarea.realizado == false %>
+        <tr>
+          <td><%= listatarea.nombre %></td>
+          <td><%= listatarea.desde %></td>
+          <td><%= listatarea.hasta %></td>
+          <td><%= listatarea.responsable %></td>
+          <td><%= listatarea.realizado %></td>
+          <td><%= listatarea.observacion %></td>
+          <td><%= link_to 'Show', listatarea %></td>
+          <td><%= link_to 'Edit', edit_listatarea_path(listatarea) %></td>
+          <td><%= link_to 'Destroy', listatarea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
