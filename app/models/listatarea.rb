@@ -1,0 +1,2 @@
+class Listatarea < ApplicationRecord
+end
